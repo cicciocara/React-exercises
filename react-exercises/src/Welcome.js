@@ -1,13 +1,13 @@
 import React from 'react';
+import { Age } from './Age';
 
 export class Welcome extends React.Component {
   render() {
     return (
       <div>
         <p>Welcome {this.props.name}!</p>
-        <p>Your age is {this.props.age}</p>
+        <Age>{this.props.age}</Age>
       </div>
     );
   }
 }
-//if name prop is a Jsx expression, nothing is going to change in the way we work
