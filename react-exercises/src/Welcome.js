@@ -10,7 +10,4 @@ export class Welcome extends React.Component {
     );
   }
 }
-
-Welcome.defaultProps = {
-  name: 'Jimmy',
-};
+//if name prop is a Jsx expression, nothing is going to change in the way we work
