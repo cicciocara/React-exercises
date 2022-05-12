@@ -6,21 +6,17 @@ export class Counter extends React.Component {
     count: this.props.initialValue,
   };
 
-  constructor(props) {
-    super(props);
-
-    this._interval = setInterval(() => {
+  componentDidMount() {
+    setInterval(() => {
       this.setState((state) => {
         return { count: state.count + this.props.incrementAmount };
       });
     }, this.props.incrementInterval);
   }
 
-  componentWillUnmount() {
-    if (this._interval) {
-      clearInterval(this._interval);
-    }
-  }
+  /*the constructor is no longer required, 
+  the difference is that the constructor is called before the rendering phase,
+   DidAmount is instead called after the first rendering */
 
   render() {
     return (
