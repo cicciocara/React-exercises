@@ -20,7 +20,7 @@ export class Login extends React.Component {
     });
   };
 
-  onLogin = (event) => {
+  onLogin = () => {
     this.setState(() => {
       return { username: this.state.username, password: this.state.password };
     });
