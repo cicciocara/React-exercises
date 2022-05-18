@@ -42,7 +42,7 @@ export class UncontrolledLogin extends React.Component {
           <input name='username' />
           <input name='password' onChange={this.enableButton} type='password' />
           <input name='remember' onChange={this.enableButton} type='checkbox' />
-          <button type='submit' disabled={!this.state.enable}>
+          <button type='submit' onClick={() => this.props.actualState(this.state)} disabled={!this.state.enable}>
             Login
           </button>
           <button type='reset'>Reset</button>
