@@ -1,6 +1,5 @@
-/* Modify the TodoList component 
-so that the input clears 
-every time a Todo is added to the items array.*/
+/* Modify the TodoList by adding a "reset" button 
+that clears the items array when clicked.*/
 import React from 'react';
 
 export class TodoList extends React.Component {
@@ -27,11 +26,18 @@ export class TodoList extends React.Component {
     }
   };
 
+  handleReset = () => {
+    this.setState({
+      items: [],
+    });
+  };
+
   render() {
     return (
       <div>
         <input name='todo' value={this.state.todo} onChange={this.handleInput} />
         <button onClick={this.handleClick}>Add new to-do</button>
+        <button onClick={this.handleReset}>Reset</button>
         <ul>
           {this.state.items.map((item, index) => (
             <li key={index}>{item}</li>
