@@ -18,7 +18,7 @@ export class App extends React.Component {
     return (
       <div>
         <Hello />
-        <UncontrolledLogin actualState={onLogin} />
+        <Login />
       </div>
     );
   }
