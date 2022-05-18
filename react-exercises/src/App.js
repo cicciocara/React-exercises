@@ -7,12 +7,16 @@ import { InteractiveWelcome } from './InteractiveWelcome';
 import { Login } from './Login';
 import { Welcome } from './Welcome';
 
+function onLogin(state) {
+  return console.log(state);
+}
+
 export class App extends React.Component {
   render() {
     return (
       <div>
         <Hello />
-        <Login />
+        <Login actualState={onLogin} />
       </div>
     );
   }

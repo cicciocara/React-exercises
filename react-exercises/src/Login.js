@@ -20,11 +20,11 @@ export class Login extends React.Component {
     });
   };
 
-  onLogin = () => {
-    this.setState(() => {
-      return { username: this.state.username, password: this.state.password };
-    });
-  };
+  // onLogin = () => {
+  //   this.setState(() => {
+  //     return { username: this.state.username, password: this.state.password };
+  //   });
+  // };
 
   render() {
     return (
@@ -33,7 +33,7 @@ export class Login extends React.Component {
         <input name='password' type='password' value={this.state.password} onChange={this.handleInput}></input>
         <input name='remember' type='checkbox' checked={this.state.checkbox} onChange={this.handleInput}></input>
         {(!this.state.username || !this.state.password) && <button disabled={true}>Login</button>}
-        {this.state.username && this.state.password && <button onClick={this.onLogin}>Login</button>}
+        {this.state.username && this.state.password && <button onClick={() => this.props.actualState(this.state)}>Login</button>}
       </div>
     );
   }
