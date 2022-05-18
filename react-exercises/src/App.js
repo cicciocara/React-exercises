@@ -8,12 +8,16 @@ import { Login } from './Login';
 import { UncontrolledLogin } from './UncontrolledLogin';
 import { Welcome } from './Welcome';
 
+function onLogin(state) {
+  return console.log(state);
+}
+
 export class App extends React.Component {
   render() {
     return (
       <div>
         <Hello />
-        <UncontrolledLogin />
+        <UncontrolledLogin actualState={onLogin} />
       </div>
     );
   }
