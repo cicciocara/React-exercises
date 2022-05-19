@@ -18,10 +18,13 @@ export class App extends React.Component {
   render() {
     return (
       <div>
-        <Container title='Questo è un container-component'>
-          <Hello />
-          <Login />
-        </Container>
+        <TodoList
+          render={(items) => {
+            return items.map((item, index) => {
+              <li key={index}>{item}</li>;
+            });
+          }}
+        ></TodoList>
       </div>
     );
   }
