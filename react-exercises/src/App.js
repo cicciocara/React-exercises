@@ -20,11 +20,15 @@ export class App extends React.Component {
       <div>
         <TodoList
           render={(items, handleRemove) => {
-            return items.map((item, index) => {
-              <li key={index}>
-                {item} <button onClick={() => handleRemove(index)}>Remove</button>
-              </li>;
-            });
+            return (
+              <ul>
+                {items.map((item, index) => {
+                  <li key={index}>
+                    {item} <button onClick={() => handleRemove(index)}>Remove</button>
+                  </li>;
+                })}
+              </ul>
+            );
           }}
         ></TodoList>
       </div>
