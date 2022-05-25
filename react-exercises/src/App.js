@@ -34,7 +34,7 @@ export class App extends React.Component {
     return (
       <div>
         <Welcome name='Francesco' age={20} />
-        <Sum numbers={numbers} />
+        <Sum />
       </div>
     );
   }
