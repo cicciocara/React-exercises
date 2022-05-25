@@ -33,8 +33,7 @@ export class App extends React.Component {
   render() {
     return (
       <div>
-        <Welcome name='Francesco' age={20} />
-        <Sum />
+        <ClickCounter />
       </div>
     );
   }
