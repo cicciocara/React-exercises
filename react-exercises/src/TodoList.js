@@ -59,7 +59,7 @@ export class TodoList extends React.Component {
               </li>
             </div>
           ))} */}
-          {this.props.render(this.state.items)}
+          {this.props.render(this.state.items, this.handleRemove)}
         </ul>
       </div>
     );

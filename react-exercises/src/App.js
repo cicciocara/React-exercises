@@ -19,9 +19,11 @@ export class App extends React.Component {
     return (
       <div>
         <TodoList
-          render={(items) => {
+          render={(items, handleRemove) => {
             return items.map((item, index) => {
-              <li key={index}>{item}</li>;
+              <li key={index}>
+                {item} <button onClick={() => handleRemove(index)}>Remove</button>
+              </li>;
             });
           }}
         ></TodoList>
