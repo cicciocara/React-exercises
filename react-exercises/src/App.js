@@ -30,13 +30,7 @@ export class App extends React.Component {
   render() {
     return (
       <div>
-        <select value={this.state.language} onChange={this.handleSelect}>
-          <option value='en'>ENGLISH</option>
-          <option value='it'>ITALIANO</option>
-        </select>
-        <LanguageContext.Provider value={this.state.language}>
-          <DisplayLanguage />
-        </LanguageContext.Provider>
+        <Welcome name='Francesco' age={20} />
       </div>
     );
   }
