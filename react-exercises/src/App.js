@@ -17,6 +17,10 @@ function onLogin(state) {
   return console.log(state);
 }
 
+function onChangeCounter(counter) {
+  console.log(`Current counter is now:  ${counter}`);
+}
+
 const numbers = [1, 2, 3, 4, 5];
 
 export class App extends React.Component {
@@ -33,7 +37,7 @@ export class App extends React.Component {
   render() {
     return (
       <div>
-        <Login actualState={onLogin} />
+        <ClickCounter onChangeCounter={onChangeCounter} />
       </div>
     );
   }
