@@ -38,7 +38,7 @@ export class App extends React.Component {
   render() {
     return (
       <div>
-        <GitHubUserList />
+        <Counter initialValue={20} />
       </div>
     );
   }

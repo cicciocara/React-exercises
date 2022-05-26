@@ -4,23 +4,17 @@
    and clears it when the component unmounts. */
 
 import React, { useEffect, useState } from 'react';
+import { UseCounter } from './UseCounter';
 
-export function Counter() {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCount((c) => c + 1);
-    }, 1000);
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, [count]);
+export function Counter({ initialValue }) {
+  const { counter, IncrementCounter, DecrementCounter, ResetCounter } = UseCounter(initialValue);
 
   return (
     <div>
-      <h1>Count: {count}</h1>
+      <h1>Counter: {counter}</h1>
+      <button onClick={IncrementCounter}>Increment Counter</button>
+      <button onClick={DecrementCounter}>Decrement Counter</button>
+      <button onClick={ResetCounter}>Reset Counter</button>
     </div>
   );
 }
