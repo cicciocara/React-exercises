@@ -4,7 +4,7 @@ import { ClickTracker } from './ClickTracker';
 import { Container } from './Container';
 import { Counter } from './Counter';
 import { DisplayLanguage } from './DisplayLanguage';
-import { GitHubUser } from './GitHubUser';
+import { GitHubUserList } from './GitHubUserList';
 import { Hello } from './Hello';
 import { InteractiveWelcome } from './InteractiveWelcome';
 import { LanguageContext } from './LanguageContext';
@@ -38,7 +38,7 @@ export class App extends React.Component {
   render() {
     return (
       <div>
-        <GitHubUser username='cicciocara' />
+        <GitHubUserList />
       </div>
     );
   }
