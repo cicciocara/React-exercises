@@ -37,7 +37,7 @@ export class App extends React.Component {
   render() {
     return (
       <div>
-        <ClickCounter onChangeCounter={onChangeCounter} />
+        <Counter />
       </div>
     );
   }

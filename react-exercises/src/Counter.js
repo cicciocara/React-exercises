@@ -1,28 +1,26 @@
-import React from 'react';
-import { CounterDisplay } from './CounterDisplay';
+/* Rewrite the Counter component from State 1
+ as a function component and add a side effect
+  that initializes the interval as soon as the component renders,
+   and clears it when the component unmounts. */
 
-export class Counter extends React.Component {
-  state = {
-    count: this.props.initialValue,
-  };
+import React, { useEffect, useState } from 'react';
 
-  componentDidMount() {
-    setInterval(() => {
-      this.setState((state) => {
-        return { count: state.count + this.props.incrementAmount };
-      });
-    }, this.props.incrementInterval);
-  }
+export function Counter() {
+  const [count, setCount] = useState(0);
 
-  /*the constructor is no longer required, 
-  the difference is that the constructor is called before the rendering phase,
-   DidAmount is instead called after the first rendering */
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCount((c) => c + 1);
+    }, 1000);
 
-  render() {
-    return (
-      <div>
-        <CounterDisplay count={this.state.count} />
-      </div>
-    );
-  }
+    return () => {
+      clearInterval(interval);
+    };
+  }, [count]);
+
+  return (
+    <div>
+      <h1>Count: {count}</h1>
+    </div>
+  );
 }
