@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { GitHubUser } from './GitHubUser';
+import { Counter } from './Counter';
 
 function onLogin(state) {
   return console.log(state);
@@ -26,7 +26,7 @@ export class App extends React.Component {
   render() {
     return (
       <div>
-        <GitHubUser username='cicciocara' />
+        <Counter initialValue={30} />
       </div>
     );
   }
