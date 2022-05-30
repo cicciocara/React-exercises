@@ -1,18 +1,6 @@
 import React from 'react';
-import { ClickCounter } from './ClickCounter';
-import { ClickTracker } from './ClickTracker';
-import { Container } from './Container';
-import { Counter } from './Counter';
-import { DisplayLanguage } from './DisplayLanguage';
-import { GitHubUserList } from './GitHubUserList';
-import { Hello } from './Hello';
-import { InteractiveWelcome } from './InteractiveWelcome';
-import { LanguageContext } from './LanguageContext';
-import { Login } from './Login';
-import { Sum } from './Sum';
-import { TodoList } from './TodoList';
-import { UncontrolledLogin } from './UncontrolledLogin';
-import { Welcome } from './Welcome';
+
+import { ControlledForm } from './ControlledForm';
 
 function onLogin(state) {
   return console.log(state);
@@ -38,7 +26,7 @@ export class App extends React.Component {
   render() {
     return (
       <div>
-        <Counter initialValue={20} />
+        <ControlledForm />
       </div>
     );
   }
