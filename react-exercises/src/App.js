@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ControlledForm } from './ControlledForm';
+import { GitHubUser } from './GitHubUser';
 
 function onLogin(state) {
   return console.log(state);
@@ -26,7 +26,7 @@ export class App extends React.Component {
   render() {
     return (
       <div>
-        <ControlledForm />
+        <GitHubUser username='cicciocara' />
       </div>
     );
   }
