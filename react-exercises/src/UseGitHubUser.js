@@ -29,5 +29,6 @@ export function UseGitHubUser(username) {
   return {
     user,
     loading,
+    error,
   };
 }
