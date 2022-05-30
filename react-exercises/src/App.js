@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Counter } from './Counter';
+import { FilteredList } from './FilteredList';
 
 function onLogin(state) {
   return console.log(state);
@@ -11,6 +11,16 @@ function onChangeCounter(counter) {
 }
 
 const numbers = [1, 2, 3, 4, 5];
+
+const list = [
+  { name: 'Pisolo', id: 1, age: 21 },
+  { name: 'Brontolo', id: 2, age: 20 },
+  { name: 'Cucciolo', id: 3, age: 19 },
+  { name: 'Eolo', id: 4, age: 12 },
+  { name: 'Mammolo', id: 5, age: 11 },
+  { name: 'Gongolo', id: 6, age: 18 },
+  { name: 'Dotto', id: 7, age: 20 },
+];
 
 export class App extends React.Component {
   state = {
@@ -26,7 +36,7 @@ export class App extends React.Component {
   render() {
     return (
       <div>
-        <Counter initialValue={30} />
+        <FilteredList list={list} />
       </div>
     );
   }
