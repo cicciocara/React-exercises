@@ -1,6 +1,5 @@
 import React from 'react';
-
-import { FilteredList } from './FilteredList';
+import { CardDetails } from './CardDetails';
 
 function onLogin(state) {
   return console.log(state);
@@ -36,7 +35,7 @@ export class App extends React.Component {
   render() {
     return (
       <div>
-        <FilteredList list={list} />
+        <CardDetails initialData={{ defaultModel: 'audi', defaultYear: 2017, defaultColor: 'white' }} />
       </div>
     );
   }
