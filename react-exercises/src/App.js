@@ -1,5 +1,7 @@
 import React from 'react';
-import { CardDetails } from './CardDetails';
+import { useState } from 'react';
+import { DisplayLanguage } from './DisplayLanguage';
+import { LanguageContext } from './LanguageContext';
 
 function onLogin(state) {
   return console.log(state);
@@ -21,22 +23,22 @@ const list = [
   { name: 'Dotto', id: 7, age: 20 },
 ];
 
-export class App extends React.Component {
-  state = {
-    language: 'en',
-  };
+export function App() {
+  const [language, setLanguage] = useState('it');
 
-  handleSelect = (event) => {
-    this.setState({
-      language: event.target.value,
-    });
-  };
-
-  render() {
-    return (
-      <div>
-        <CardDetails initialData={{ defaultModel: 'audi', defaultYear: 2017, defaultColor: 'white' }} />
-      </div>
-    );
+  function handleLanguage(event) {
+    setLanguage(event.target.value);
   }
+
+  return (
+    <div>
+      <select value={language} onChange={handleLanguage}>
+        <option value='it'>Italiano</option>
+        <option value='en'>English</option>
+      </select>
+      <LanguageContext.Provider value={language}>
+        <DisplayLanguage />
+      </LanguageContext.Provider>
+    </div>
+  );
 }
