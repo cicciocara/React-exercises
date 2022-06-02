@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Welcome } from './Welcome';
+import { Counter } from './Counter';
 
 function onLogin(state) {
   return console.log(state);
@@ -33,6 +34,7 @@ export function App() {
   return (
     <Routes>
       <Route path='/' element={<Welcome name='cicciocara' />} />
+      <Route path='/counter' element={<Counter initialValue={30} />} />
     </Routes>
   );
 }
