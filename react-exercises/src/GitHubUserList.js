@@ -3,6 +3,7 @@ showing a GithubUser component for each username entered.
  The usernames should be added to the array using an input field and a button. */
 
 import { useState } from 'react';
+import { Link, Outlet } from 'react-router-dom';
 import { GitHubUser } from './GitHubUser';
 
 export function GitHubUserList() {
@@ -24,7 +25,10 @@ export function GitHubUserList() {
       {usernames.map((user, index) => {
         return (
           <div key={user + index}>
-            <GitHubUser username={user} />
+            <li>
+              <Link to={`${user}`}>github-user:{user}</Link>
+            </li>
+            <Outlet />
           </div>
         );
       })}
