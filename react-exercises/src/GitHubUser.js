@@ -10,7 +10,7 @@ export function GitHubUser({ username }) {
   return (
     <div>
       {error && <h2>there is an error, try again</h2>}
-      {!loading && (
+      {!loading && !error && (
         <div>
           <h2>UserName: {user && user.name}</h2>
           <h2>Id: {user && user.id}</h2>

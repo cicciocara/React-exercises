@@ -39,11 +39,12 @@ export function App() {
         <Route path='/counter' element={<Counter initialValue={30} />} />
         <Route path='/users' element={<ShowGithubUser />} />
         <Route path='users/:username' element={<ShowGithubUser />} />
+        <Route path='*' element={<p>Not fount :(</p>} />
       </Routes>
       <Link to='/'>HomePage</Link> | <Link to='/counter'>Counter</Link> | <Link to='/users'>GithubUser</Link> |
     </div>
 
-    /* Add three Links within the main App
-     component and use them to navigate to all three routes. */
+    /* Add a Not Found route
+     that renders when a user navigates to a path that does not exist.*/
   );
 }
