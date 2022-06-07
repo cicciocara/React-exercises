@@ -39,7 +39,7 @@ export function App() {
       <Routes>
         <Route path='/' element={<Welcome name='cicciocara' />} />
         <Route path='/counter' element={<Counter initialValue={30} />} />
-        <Route path='/gitHubUser' element={<GitHubUser username='cicciocara' />} />
+        <Route path='/gitHubUser' element={<GitHubUser />} />
         <Route path='/users' element={<GitHubUserList />}>
           <Route index element={<p>Add a user and select it</p>} />
           <Route path=':user' element={<ShowGithubUser />} />
