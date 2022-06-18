@@ -17,4 +17,4 @@ store.dispatch(addTodo(2, 'lavare la macchina', true));
 store.dispatch(addTodo(3, 'compilare i moduli', false));
 store.dispatch(removeTodo(2));
 store.dispatch(removeTodo(1));
-store.dispatch(editTodo(2, 'uccidere il vicino', true));
+store.dispatch(editTodo(3, 'uccidere il vicino', true));
