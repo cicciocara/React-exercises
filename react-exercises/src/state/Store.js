@@ -1,8 +1,14 @@
-/*Create a store that uses CounterReducer as its root reducer,
- and dispatch an INCREMENT action on the store. Verify that the state updates as expected. */
+/*Modify the store so that it uses a root 
+reducer that combines both the counter and todos reducers.
+ Dispatch actions for both the counter and the todos. */
 
-import { createStore } from 'redux';
+import { combineReducers, createStore } from 'redux';
 import { counterReducer } from './CounterState';
 import { todosReducer } from './TodosReducer';
 
-export const store = createStore(todosReducer);
+const rootReducer = combineReducers({
+  counter: counterReducer,
+  todos: todosReducer,
+});
+
+export const store = createStore(rootReducer);
